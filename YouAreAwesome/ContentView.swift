@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @State private var messageString: String = ""
+    @State private var messageString: String = "Yo!"
     
     var body: some View {
         //        VStack {
@@ -32,12 +32,17 @@ struct ContentView: View {
         //
         //        }
         
+        
         VStack {
             Text(messageString)
                 .font(.largeTitle)
                 .fontWeight(.semibold)
+                .minimumScaleFactor(0.5)
+                .multilineTextAlignment(.center)
                 .foregroundStyle(.red)
-                .padding()
+                            .padding()
+                            .frame(width: 300, height: 150)
+                .border(.orange, width: 1)
             
             HStack {
                 Button("Awesome") {
@@ -52,6 +57,7 @@ struct ContentView: View {
                 }
                 .buttonStyle(.borderedProminent)
             }
+            .border(.purple, width: 5)
             
         }
         
