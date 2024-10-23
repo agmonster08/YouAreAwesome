@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @State private var messageString: String = "Yo!"
+    @State private var messageString: String = "When the Genius Bar needs help, they call you!"
     
     var body: some View {
         //        VStack {
@@ -40,9 +40,10 @@ struct ContentView: View {
                 .minimumScaleFactor(0.5)
                 .multilineTextAlignment(.center)
                 .foregroundStyle(.red)
-                            .padding()
-                            .frame(width: 300, height: 150)
+                            .frame(height: 150)
+                            .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/) // Will expand the View's size to fit the size of its container
                 .border(.orange, width: 1)
+                .padding()
             
             HStack {
                 Button("Awesome") {
