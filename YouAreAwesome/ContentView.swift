@@ -13,20 +13,9 @@ struct ContentView: View {
     
     var body: some View {
         
-        ZStack {
-            Rectangle()
-                .fill(
-                    Gradient(colors: [])
-                )
-                .ignoresSafeArea()
+        
+        GeometryReader { geometry in
             VStack {
-                Text("You Have Skills!")
-                    .font(.largeTitle)
-                    .fontWeight(.black)
-                    .foregroundStyle(Color("Gold-BC"))
-                    .padding()
-                    .background(Color("Marron-BC"))
-                    .cornerRadius(15)
                 
                 Spacer()
                 
@@ -42,6 +31,16 @@ struct ContentView: View {
                     .padding()
                 
                 Spacer()
+                
+                Divider()
+                    .background(.black)
+                    .padding()
+                    .frame(width: 150.0)
+                
+                
+                Rectangle()
+                    .fill(.indigo)
+                    .frame(width: geometry.size.width * (2/3), height: 1)
                 
                 
                 HStack {
@@ -64,9 +63,10 @@ struct ContentView: View {
                 
             }
         }
-        
     }
+    
 }
+
 
 #Preview {
     ContentView()
