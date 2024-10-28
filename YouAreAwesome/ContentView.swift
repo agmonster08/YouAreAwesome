@@ -9,31 +9,30 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @State private var messageString: String = "When the Genius Bar needs help, they call you!"
+    @State private var messageString: String = "Namaste"
     
     var body: some View {
         
         
         
         VStack {
-            Group {
-                
-                Text("This is part of a grup")
-                Text("This is part of a grup")
-                Text("This is part of a grup")
-                Text("This is part of a grup")
-                Text("This is part of a grup")
-                Text("This is part of a grup")
-                Text("This is part of a grup")
-                Text("This is part of a grup")
-                Text("This is part of a grup")
-                Text("This is part of a grup")
-                Text("This is part of a group")
-            }
-            .font(.largeTitle)
-            .fontWeight(.semibold)
-            
             Spacer()
+            
+            Image(systemName: "cloud.sun.rain.fill")
+                .resizable()
+                .scaledToFit()
+                .symbolRenderingMode(.multicolor)
+                .padding()
+                .background(Color(hue: 0.516, saturation: 0.504, brightness: 0.974))
+                .cornerRadius(30)
+                .shadow(radius: 30, x: 20, y: 20)
+                .overlay(
+                    RoundedRectangle(cornerRadius: 30)
+                        .stroke(.teal, lineWidth: 1)
+                )
+//                .clipShape(Circle())
+                .padding()
+            
             
             Text(messageString)
                 .font(.largeTitle)
@@ -43,7 +42,6 @@ struct ContentView: View {
                 .foregroundStyle(.red)
                 .frame(height: 150)
                 .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/) // Will expand the View's size to fit the size of its container
-            //                .border(.orange, width: 1)
                 .padding()
             
             Spacer()
@@ -65,7 +63,6 @@ struct ContentView: View {
                 }
                 .buttonStyle(.borderedProminent)
             }
-            //            .border(.purple, width: 5)
             .padding()
             
         }
