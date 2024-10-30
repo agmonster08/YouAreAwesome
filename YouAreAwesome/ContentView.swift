@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @State private var messageString: String = "Namaste"
+    @State private var messageString: String = " "
     
     var body: some View {
         
@@ -17,21 +17,6 @@ struct ContentView: View {
         
         VStack {
             Spacer()
-            
-            Image(systemName: "cloud.sun.rain.fill")
-                .resizable()
-                .scaledToFit()
-                .symbolRenderingMode(.multicolor)
-                .padding()
-                .background(Color(hue: 0.516, saturation: 0.504, brightness: 0.974))
-                .cornerRadius(30)
-                .shadow(radius: 30, x: 20, y: 20)
-                .overlay(
-                    RoundedRectangle(cornerRadius: 30)
-                        .stroke(.teal, lineWidth: 1)
-                )
-//                .clipShape(Circle())
-                .padding()
             
             
             Text(messageString)
@@ -47,22 +32,20 @@ struct ContentView: View {
             Spacer()
             
             
-            
-            HStack {
-                Button("Awesome") {
-                    // This is the action performed when the buttos is pressed
-                    messageString = "You Are Awesome!"
-                }
-                .buttonStyle(.borderedProminent)
+            Button("Show Message") {
                 
-                Spacer()
-                
-                Button("Great") {
-                    // This is the action performed when the buttos is pressed
-                    messageString = "You Are Great!"
+                let messageOne: String = "You Are Awesome!"
+                let messageTwo: String = "You Are Great!"
+                // This is the action performed when the buttos is pressed
+                if messageString == messageOne {
+                    messageString = messageTwo
+                } else {
+                    messageString = messageOne
                 }
-                .buttonStyle(.borderedProminent)
             }
+            .buttonStyle(.borderedProminent)
+            
+            
             .padding()
             
         }
