@@ -37,11 +37,13 @@ struct ContentView: View {
                 let messageOne: String = "You Are Awesome!"
                 let messageTwo: String = "You Are Great!"
                 // This is the action performed when the buttos is pressed
-                if messageString == messageOne {
-                    messageString = messageTwo
-                } else {
-                    messageString = messageOne
-                }
+//                if messageString == messageOne {
+//                    messageString = messageTwo
+//                } else {
+//                    messageString = messageOne
+//                }
+                messageString = messageString == messageOne ? messageTwo : messageOne
+                
             }
             .buttonStyle(.borderedProminent)
             
