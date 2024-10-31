@@ -9,13 +9,23 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @State private var messageString: String = " "
+    @State private var messageString: String = ""
+    @State private var imageName: String = ""
+    @State private var imageNumber: Int = 0
     
     var body: some View {
         
         
         
         VStack {
+            
+            Image(imageName)
+                .resizable()
+                .scaledToFit()
+                .cornerRadius(30)
+                .shadow(radius: 30)
+                .padding()
+            
             Spacer()
             
             
@@ -36,13 +46,14 @@ struct ContentView: View {
                 
                 let messageOne: String = "You Are Awesome!"
                 let messageTwo: String = "You Are Great!"
-                // This is the action performed when the buttos is pressed
-//                if messageString == messageOne {
-//                    messageString = messageTwo
-//                } else {
-//                    messageString = messageOne
-//                }
-                messageString = messageString == messageOne ? messageTwo : messageOne
+                messageString = (messageString == messageOne ? messageTwo : messageOne)
+                
+                imageName = "image\(imageNumber)"
+                imageNumber += 1
+                if imageNumber > 9 {
+                    imageNumber = 0
+                }
+            
                 
             }
             .buttonStyle(.borderedProminent)
